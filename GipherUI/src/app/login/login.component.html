@@ -1,0 +1,22 @@
+
+<div class="center-login" fxLayout="row" fxLayoutAlign="center center">
+   <mat-card class="example-card" >
+    <mat-spinner *ngIf="loadingAnimation"></mat-spinner>
+    <mat-card-content>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!loadingAnimation">
+     <mat-form-field>
+        <input matInput type="text" placeholder="Enter userName" name="userName" ngModel #userInput="ngModel" required userName>
+        <mat-error *ngIf="userInput.invalid">Please enter a valid userName.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password" name="password" ngModel #passwordInput="ngModel" required [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+      </mat-form-field>
+      <br><br>
+      <button mat-raised-button color="primary" type="submit" *ngIf="!loadingAnimation" class="center-buttons">Login</button>
+    </form>
+    </mat-card-content>
+  </mat-card>
+  <label class="error-message">{{ errMessage }}</label>
+</div>

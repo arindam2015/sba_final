@@ -1,0 +1,26 @@
+<div class="center-login">
+  <br>
+    <div class="row scrollStyle" style="background-color: black; color: white; border: 3px solid white"> 
+        <div class="col-sm-6 col-md-10 col-lg-12 topbottomheight">      
+            <h2 class="display-7"  >Bookmark Gifs>></h2>
+            <br>
+            <div class="bookmarkResultsDiv">     
+               <mat-card class="matCards" *ngFor="let bookmark of gipherBookmark; let i = index">                                                                
+                  <mat-card-header>
+                      <mat-card-title>{{bookmark.gipherTitle}}</mat-card-title>
+                  </mat-card-header> 
+                  <mat-card-content class="disp-center">
+                      <p>Gipher ID: {{bookmark.gipherId}}</p>   
+                <img mat-card-image src="{{bookmark.gipherUrl}}" style="width:150px;height:100px;">
+                   </mat-card-content>                                    
+                   <mat-card-actions allign="end">
+                      <button  mat-raised-button (click)="onClickDelete(bookmark.gipherId)" style="border: 2px solid black">
+                        <mat-icon>delete</mat-icon>
+                      </button>                                            
+                    </mat-card-actions>                                                
+                </mat-card>      
+              </div>
+              </div>
+              </div>    
+        </div>
+

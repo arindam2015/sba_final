@@ -1,0 +1,27 @@
+spring:
+  data:
+    mongodb:
+     # username: ${MONGO_USERNAME}
+     # password: ${MONGO_PASSWORD}
+      database: ${MONGO_DATABASE}
+      port: ${MONGO_PORT}
+      host: ${MONGO_HOST}
+     #  port: 27017
+      # host: mongo-container
+       #database: SBA
+  application:
+    name: gipher-manager
+  zipkin:
+    base-url: http://localhost:9411/  
+    locator:
+      discovery:
+        enabled: true
+ 
+server:
+  port: 6078
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+      
+spring.sleuth.sampler.probability: 1

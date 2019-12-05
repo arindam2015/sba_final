@@ -1,0 +1,89 @@
+h2{
+  color: red;
+}
+mat-form-field {
+    width: 60%;
+    justify-content: center;
+    display: flex;
+    
+  }  
+  mat-spinner {
+    margin:auto;
+  }
+    .center-login {
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  background-color: black;
+  background-image: url("/images/giphy_background.gif");
+  }
+  #searchBarWrap{ 
+  display: flex;
+  justify-content: center;
+ }
+#searchBar{
+  border:#BA4A00 solid;
+  border-width: .2em;
+  border-radius: .7em 0 0 .7em;
+  padding: .2em .2em .2em .5em;
+  background-color: #fff;
+}
+  .img {
+    width: 100%;
+    margin-bottom: 18%;
+  }
+ .center-buttons {
+    border:#BA4A00 solid;
+    border-width: .2em;
+    border-radius: 0 .7em .7em 0;
+    background-color: #BA4A00;
+    color:white;
+    font-weight:bold;
+    padding-bottom: .2em;
+  }
+  .row
+{
+    margin:3vh 8vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.matCards {
+  margin: auto;
+   
+   border: 3px solid black;
+   padding: 10px;
+}
+.disp-center {
+  margin: auto;
+  width: 100%;
+  padding: 20px;
+}
+.searchResultsDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.trendingResultsDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+}
+.scrollStyle
+{
+   max-height: 100vh;
+   overflow-y: scroll;
+}
+.display-7{
+  color: white;
+  justify-content: center;
+}
+
+  
+
+  
+  
+  

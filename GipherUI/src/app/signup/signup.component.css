@@ -1,0 +1,32 @@
+mat-form-field {
+    width: 100%;
+  }
+  
+  mat-spinner {
+    margin:auto;
+  }
+  
+  .example-card {
+    margin-top: 2em;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: red;
+    background-color: azure;
+  }
+
+  .center-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 90%;
+    background-image: url("/images/giphy_background.gif");
+  }
+  
+  .center-buttons {
+    display: block;
+    margin:auto;
+  }

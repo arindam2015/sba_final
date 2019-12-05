@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <!--<button mat-icon-button (click)="onSidenav()">
+      <i class="material-icons">menu</i>
+    </button>-->
+  <span><a routerLink="/dashboard">{{title}}</a></span>
+  <span class="spacer"></span>
+  <ul>
+    
+    <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/login" routerLinkActive="active">Login</a></li>
+    <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/signup" routerLinkActive="active">SignUp</a></li>
+    <li *ngIf="userIsAuthenticated"><button mat-button routerLink="/recommandedBookmark">Recommand</button></li>
+    <li *ngIf="userIsAuthenticated"><button mat-button routerLink="/bookmark">Bookmark</button></li>
+    <li *ngIf="userIsAuthenticated" class="welcome-text-li"><span class="name-text">{{ name }}</span></li>
+     <li *ngIf="userIsAuthenticated"><button mat-button (click)="onLogout()">Logout</button></li>
+  </ul>
+</mat-toolbar>
+

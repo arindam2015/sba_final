@@ -1,0 +1,55 @@
+mat-form-field {
+    width: 100%;
+  }
+  
+  mat-spinner {
+    margin:auto;
+  }
+  h6{
+    
+    justify-content: center;
+    
+  }
+  .example-card {
+    margin-top: 2em;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width:80%;
+    border-style: solid;
+    border-color: red;
+    background-color: azure;
+  }
+ 
+  mat-card-content {
+        display: flex;
+        justify-content: center;
+        margin-top: 3em;
+      }
+      mat-card-title{
+        justify-content: center;
+        margin-top: 1em;
+      }
+
+      
+  
+  .center-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 90%;
+    background-image: url("/images/giphy_background.gif");
+    
+  }
+  
+  .center-buttons {
+    display: block;
+    margin:auto;
+  }
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }

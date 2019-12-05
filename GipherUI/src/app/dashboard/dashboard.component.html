@@ -1,0 +1,66 @@
+<div class="center-login">
+  <br>
+  <h2 id="header"><marquee>Welcome to Gipher</marquee></h2>
+    <br>  
+    <div id="searchBarWrap">
+        <form (submit)="onSearch(searchForm)" #searchForm="ngForm" >
+            <mat-form-field>
+                <input matInput type="input" placeholder="Search" name="search" id="searchBar" ngModel #searchInput="ngModel" >
+             </mat-form-field>
+             <button mat-raised-button color="primary" type="submit"  class="center-buttons"><mat-icon>search</mat-icon></button>
+</form>
+</div>
+<br>
+<br>
+
+<div class="row scrollStyle" style="background-color: black; color: white; border: 3px solid white" *ngIf="isSearched"> 
+    <div class="col-3 col-sm-6 col-md-10 col-lg-12 topbottomheight">      
+        <h2 class="display-7">Search Results:</h2>
+        <div class="searchResultsDiv">     
+           <mat-card class="matCards" *ngFor="let search of giphy; let i = index">                                                                
+              <mat-card-header>
+                  <mat-card-title>{{search.title}}</mat-card-title>
+              </mat-card-header> 
+              <mat-card-content class="disp-center">
+                  <p>Gipher ID: {{search.id}}</p>   
+            <img mat-card-image src="{{search.images.fixed_width.url}}" style="width:150px;height:100px;">
+               </mat-card-content>      
+                                 
+              <button  mat-raised-button (click)="onClickFav(search.id,search.title,search.images.fixed_width.url)" style="border: 2px solid black">
+                <mat-icon>bookmark</mat-icon>
+              </button>                                                
+            </mat-card>      
+          </div>
+          </div>
+          </div>        
+  <!--Tranding images display-->
+<h6>Trending Gifs </h6>
+<div class="row scrollStyle" style="background-color: black; color: white; border: 3px solid white" *ngIf="!isSearched">       
+  <div class="col-sm-6 col-md-10 col-lg-12 topbottomheight">
+      <h2 class="display-7" style="color:white">Trending Images>></h2>
+      <div class="trendingResultsDiv"> 
+          <mat-card class="matCards" *ngFor="let trending of giphy; let i = index">  
+              <mat-card-header>
+                  <mat-card-title>{{trending.title}}</mat-card-title>
+              </mat-card-header> 
+              <mat-card-content class="disp-center">
+                  <p>Gipher ID: {{trending.id}}</p>  
+                  <img mat-card-image src="{{trending.images.fixed_width.url}}" style="width:150px;height:100px;">
+              </mat-card-content>
+              <mat-card-actions allign="end">
+              <button  mat-raised-button (click)="onClickFav(trending.id,trending.title,trending.images.fixed_width.url)" style="border: 2px solid black">
+                  <mat-icon>bookmark</mat-icon>
+                </button>
+              </mat-card-actions>
+              </mat-card>
+            </div>
+         </div>
+         </div>    
+                       
+
+</div>
+
+
+    
+
+

@@ -1,0 +1,20 @@
+<div class="recommeded-wrapper">
+    <br>
+    <div class="row scrollStyle" > 
+        <div class="col-sm-6 col-md-10 col-lg-12 topbottomheight">      
+            <h2 class="display-7"  >Recommended Gifs>></h2>
+            <br>
+            <div class="recommendedResultsDiv">     
+               <mat-card class="matCards" *ngFor="let recommand of gipherRecommend; let i = index">                                                                
+                  <mat-card-header>
+                      <mat-card-title>{{recommand.gipherTitle}}</mat-card-title>
+                  </mat-card-header> 
+                  <mat-card-content class="disp-center">
+                      <p> count= {{recommand.count}}</p>   
+                <img class="mat-card-image" mat-card-image src="{{recommand.gipherURL}}" >
+                   </mat-card-content>                                    
+            </mat-card>      
+              </div>
+              </div>
+              </div>     
+    </div>

@@ -1,0 +1,87 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.5
+    network_mode: host
+    container_name: mysql-container
+    ports:
+      - 3306:3306  
+    environment:
+     MYSQL_ROOT_PASSWORD: password
+     MYSQL_DATABASE: SBA
+     MYSQL_USER: root
+     MYSQL_PASSWORD: password
+  mongo:
+    image: mongo:3.6
+    network_mode: host
+    container_name: mongo-container
+    ports:
+      - 27017:27017 
+  eurekaservice:
+    image:  arindamkotal86/fsdsba:eurekaservice
+    container_name: eureka-container
+    build: netflix-eureka-naming-server/ 
+    restart: always
+    ports:
+      - 8761:8761      
+    healthcheck:
+      test: "exit 0"
+  zuulservice:
+    image:  arindamkotal86/fsdsba:zuuluservice
+    container_name: zuuluservice-container
+    build: netflix-zuul-api-gateway-server/
+    restart: always
+    network_mode: host
+    ports:
+      - 8765:8765
+    healthcheck:
+      test: "exit 0"
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbit
+    container_name: rabbitmq-container
+    ports:
+      - 5672:5672
+      - 15672:15672 
+  accountmanagerservice:
+    image: arindamkotal86/fsdsba:accountmanagerservice
+    build: accountmanager/
+    restart: always
+    network_mode: host
+    container_name: accountmanagerservice-container
+    ports: 
+      - 9200:9200
+    depends_on:
+      - mysql
+      - eurekaservice 
+  gipherbookmarkservice:
+    image: arindamkotal86/fsdsba:gipherbookmarkservice
+    build: giphermanager/
+    restart: always
+    network_mode: host
+    container_name: gipherbookmarkservice-container
+    ports:
+      - 6078:6078
+    depends_on:
+      - mongo
+      - eurekaservice
+      - rabbitmq 
+  recommendationservice:
+    image: arindamkotal86/fsdsba:recommendationservice
+    build: gipherrecommendersystem/
+    restart: always
+    network_mode: host
+    container_name: gipherRecommendationService-container
+    ports:
+      - 6082:6082
+    depends_on:
+      - mongo
+      - eurekaservice
+      - rabbitmq
+  gipherappui:
+    image:  arindamkotal86/fsdsba:gipherappui
+    build: GipherUI/
+    container_name: angular-container
+    ports:
+      - 80:80 
+    

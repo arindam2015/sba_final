@@ -1,0 +1,45 @@
+.center-login {
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  background-color: black;
+  background-image: url("/images/giphy_background.gif");
+  display: flex;
+  }
+
+    .matCards {
+      margin: auto;
+       border: 3px solid black;
+       padding: 10px;
+    }
+    .row
+    {
+        margin:3vh 8vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .img {
+      width: 100%;
+      margin-bottom: 18%;
+    }
+    .disp-center {
+      margin: auto;
+      width: 100%;
+      padding: 20px;
+    }
+    .bookmarkResultsDiv {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+ .scrollStyle
+{
+   max-height: 100vh;
+   overflow-y: scroll;
+}
+.display-7{
+  color: white;
+  justify-content: center;
+}

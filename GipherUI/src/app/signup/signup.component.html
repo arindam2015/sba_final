@@ -1,0 +1,32 @@
+<div class="center-login">
+ 
+  <mat-card class="example-card">
+    <mat-spinner *ngIf="loadingAnimation"></mat-spinner>
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!loadingAnimation">
+        <mat-form-field>
+            <input matInput type="input" placeholder="Enter UserId" name="uName" ngModel #uNameInput="ngModel" required>
+            <mat-error *ngIf="uNameInput.invalid">Please enter UserId.</mat-error>
+          </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" placeholder="First Name" name="fName" ngModel #fNameInput="ngModel" required >
+        <mat-error *ngIf="fNameInput.invalid">Please enter First name.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" placeholder="Last Name" name="lName" ngModel #lNameInput="ngModel" required >
+        <mat-error *ngIf="lNameInput.invalid">Please enter Last name.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="input" placeholder="User Role" name="userRole" ngModel #roleInput="ngModel" required >
+        <mat-error *ngIf="roleInput.invalid">Please enter proper role.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password" name="password" ngModel #passwordInput="ngModel" required [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+      </mat-form-field>
+      <br><br>
+      <button mat-raised-button color="primary" type="submit" *ngIf="!loadingAnimation" class="center-buttons">Signup</button>
+      </form>
+      </mat-card>
+      </div>
+      
